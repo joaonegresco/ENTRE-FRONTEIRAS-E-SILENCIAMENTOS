@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR" data-motion="on">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#141315">
+    <title>ENTRE FRONTEIRAS E SILENCIAMENTOS</title>
+    <link rel="stylesheet" href="css/atlas.css">
+</head>
+
+<body>
+    <header><div class="brandBlock"><a class="brand" href="#inicio">ENTRE FRONTEIRAS E SILENCIAMENTOS</a><p class="projectSubtitle">UMA ABORDAGEM ORIENTADA POR DADOS SOBRE A VULNERABILIDADE MULTIDIMENSIONAL DAS MULHERES DIANTE DA INSTABILIDADE GEOPOLÍTICA NO ESTREITO DE ORMUZ</p></div>
+        <nav aria-label="Navegação"><a href="#inicio">Panorama</a><a href="#indicadores" data-panel="indicadores"
+                aria-haspopup="dialog">Indicadores</a><a href="#mapa" data-panel="mapa"
+                aria-haspopup="dialog">Mapa</a><a href="#dados" data-panel="dados" aria-haspopup="dialog">Registros</a>
+        </nav>
+        <div id="progress"></div>
+    </header>
+    <main id="inicio">
+        <section class="overview">
+            <div class="heroBalance">
+                <div id="atlasArt">
+                    <div class="deathInfo" id="homeDeath" aria-live="polite"><b>Mortes documentadas</b>Passe o mouse ou
+                        toque em um território para consultar o período e a fonte.</div>
+                </div>
+                <div class="heroSide">
+<figure class="warSimulation" aria-labelledby="simulationHeading" aria-describedby="simulationLabel simulationStatus">
+  <div class="simulationTop">
+    <span id="simulationLabel">Simulação · dados fictícios</span>
+    <button type="button" id="simulationPause" aria-label="Pausar simulação">Pausar</button>
+  </div>
+  <h2 id="simulationHeading">Mulheres mortas na guerra</h2>
+  <div class="simulationTotal"><strong id="simulationValue">24</strong><span>Total fictício</span></div>
+  <svg id="simulationPlot" viewBox="0 0 300 92" aria-hidden="true">
+    <defs>
+      <linearGradient id="simulationFill" x2="0" y2="1" gradientUnits="objectBoundingBox">
+        <stop offset="0" stop-color="#f6a783" stop-opacity=".3"/>
+        <stop offset="1" stop-color="#f6a783" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <g class="simulationGrid"></g>
+    <path class="simulationArea" fill="url(#simulationFill)"/>
+    <path class="simulationLine"/>
+    <circle class="simulationDot" r="3.25"/>
+  </svg>
+  <figcaption id="simulationStatus">Últimas 12 leituras · atualização simulada a cada 4 s.</figcaption>
+</figure>
+
+<aside class="warBoard" aria-labelledby="warHeading">
+                    <h2 id="warHeading">Balanço da guerra</h2>
+                    <p class="boardIntro">Panorama por território · população geral</p>
+                    <div class="boardFeed">
+                        <div class="boardTabs" role="group" aria-label="Território do balanço de mortes e ferimentos">
+                            <button type="button" data-place="gaza" aria-pressed="true">Gaza</button><button
+                                type="button" data-place="west_bank" aria-pressed="false">Cisjordânia</button><button
+                                type="button" data-place="lebanon" aria-pressed="false">Líbano</button></div>
+                        <div class="boardPair">
+                            <div><span>Mortes</span><strong id="boardDeaths"></strong></div>
+                            <div><span>Ferimentos</span><strong id="boardInjured"></strong></div>
+                        </div>
+                        <p id="boardPeriod"></p><a href="https://data.techforpalestine.org/docs/summary/"
+                            target="_blank" rel="noopener noreferrer">Tech for Palestine ↗</a>
+                        <p id="boardStatus" role="status"></p>
+                    </div>
+                    <div class="boardReport">
+                        <div>
+                            <h3>Violência sexual</h3><a href="https://docs.un.org/S/2026/321" target="_blank"
+                                rel="noopener noreferrer">ONU · § 35 ↗</a>
+                        </div><strong>31 pessoas</strong>
+                        <p>Gaza e Cisjordânia · vítimas em casos verificados em 2025, incluindo 7 mulheres e 1 menina.
+                        </p>
+                    </div>
+                    <div class="boardReport">
+                        <div>
+                            <h3>Deslocamento</h3><a
+                                href="https://chile.unwomen.org/sites/default/files/2026-04/gender-alert-the-immediate-and-long-term-impact-of-the-military-escalation-in-the-middle-east-on-women-and-girls-en.pdf"
+                                target="_blank" rel="noopener noreferrer">ONU Mulheres ↗</a>
+                        </div><strong>Até 3,2 milhões</strong>
+                        <p>Irã · pessoas deslocadas dentro do país em março de 2026. Cerca de 1,6 milhão eram mulheres e
+                            meninas.</p>
+                    </div>
+                </aside>
+</div>
+            </div>
+            <div class="introCopy">
+                <h1>Mulheres em <em>Conflito.</em></h1>
+                <p>Como a guerra afeta mulheres e meninas no Oriente Médio.</p><a class="cta" href="#mapa"
+                    data-panel="mapa" aria-haspopup="dialog">Abrir mapa regional</a>
+            </div>
+            <aside class="summary">
+                <h2>Na planilha</h2>
+                <div id="stats"></div>
+            </aside>
+        </section>
+        <div id="atlas-analysis">
+            <section class="impact reveal" id="indicadores">
+                <div class="sectionHead">
+                    <h2>Mulheres e meninas em números</h2>
+                    <p>Selecione um indicador para consultar o período e a fonte.</p>
+                </div>
+                <div class="cards" id="cards"></div>
+                <p class="small">Cada número corresponde ao território e ao período apresentados.</p>
+            </section>
+            <section id="mapa" class="reveal">
+                <div class="sectionHead">
+                    <h2>Mapa Regional</h2>
+                    <p>Escolha um território no mapa para abrir sua ficha de fontes.</p>
+                </div>
+                <div class="mapgrid">
+                    <div class="mapColumn">
+                        <div class="plate">
+                            <div class="toolbar">
+                                <div class="seg"><button id="local" aria-pressed="true">Israel e
+                                        Palestina</button><button id="region" aria-pressed="false">Oriente
+                                        Médio</button></div>
+                            </div><svg id="geo" role="img"
+                                aria-label="Mapa de Israel e da Palestina, com destaque para a Faixa de Gaza"
+                                viewBox="0 0 600 350"></svg>
+                            <div class="deathInfo" id="regionalDeath" aria-live="polite"></div>
+                            <div class="caption"><span id="mapCaption">MEDITERRÂNEO ORIENTAL</span><span>↑ N</span>
+                            </div>
+                        </div>
+                        <section class="timeline">
+                            <h3>Cobertura da planilha por semestre</h3>
+                            <div id="periods"></div>
+                        </section>
+                    </div>
+                    <aside class="chart"><label class="pickerLabel">Território<select id="areaPicker"></select></label>
+                        <h3 id="dossierTitle"></h3>
+                        <h4>O que dizem as fontes</h4>
+                        <div id="sourceList"></div><button id="openRows"></button>
+                    </aside>
+                </div>
+            </section>
+            <section id="dados" class="reveal">
+                <div class="sectionHead">
+                    <h2>Registros</h2>
+                    <p>Filtre por território, indicador e origem dos dados.</p>
+                </div>
+                <div class="recordTools">
+                    <div class="controls"><label>Origem dos dados<select id="base">
+                                <option value="sheet">Planilha do projeto</option>
+                                <option value="ref">Indicadores com fonte</option>
+                            </select></label><label>Território<select
+                                id="country"></select></label><label>Indicador<select
+                                id="topic"></select></label><button id="reset">Limpar filtros</button></div>
+                    <p id="count" aria-live="polite"></p>
+                </div>
+                <div id="results"></div>
+            </section>
+        </div>
+        <footer><b>ENTRE FRONTEIRAS E SILENCIAMENTOS</b><span>UMA ABORDAGEM ORIENTADA POR DADOS SOBRE A VULNERABILIDADE MULTIDIMENSIONAL DAS MULHERES DIANTE DA INSTABILIDADE GEOPOLÍTICA NO ESTREITO DE ORMUZ</span></footer>
+    </main>
+    <script src="dados/geografia.js"></script>
+    <script src="dados/indicadores.js"></script>
+    <script src="dados/planilha.js"></script>
+    <script src="js/atlas.js"></script>
+    <script src="js/panorama.js"></script>
+    <script src="js/territorios.js"></script>
+    <script src="js/animacoes.js"></script>
+    <script src="js/zoom.js"></script>
+    <script src="js/universo.js"></script>
+    <script src="js/filtros.js"></script>
+    <script src="js/placar.js"></script>
+    <script src="js/janelas.js"></script>
+    <script src="js/flutuacao.js"></script>
+<script src="js/simulacao.js"></script>
+</body>
+
+</html>
